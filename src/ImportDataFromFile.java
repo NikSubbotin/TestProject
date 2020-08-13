@@ -5,17 +5,19 @@ import java.util.Scanner;
 public class ImportDataFromFile {
     public int[] startDataImport() throws FileNotFoundException {
 
-        int[] arrayNumbers = new int[100];
+        int quantityNumbers = 100;
 
-        File file = new File("DataForImport/TestData");
+        int[] arrayNumbers = new int[quantityNumbers];
 
-        Scanner scanner = new Scanner(file);
+        File file = new File("resources/TestData");
 
-        for (int i = 0; i < 100; i++){
-            arrayNumbers[i] = scanner.nextInt();
+        Scanner dataFromFile = new Scanner(file);
+
+        for (int i = 0; i < quantityNumbers; i++){
+            arrayNumbers[i] = dataFromFile.nextInt();
         }
 
-        scanner.close();
+        dataFromFile.close();
 
         return arrayNumbers;
     }
